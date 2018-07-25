@@ -8,10 +8,24 @@ def remove_it(num)
   num
 end
 #does this 6 times
-print "your stats are "
+def statPrint
+  print "your stats are "
+  x = 0
+    until x == 6
+        print remove_it(dndStats).inject(0, :+) #the inject puts + inbetween each number in the arrray
+        print " "
+        x += 1
+    end
+end
+
+puts "How many Players do you have?"
+j = gets.chomp.to_i
 x = 0
-until x == 6
-  print remove_it(dndStats).inject(0, :+) #the inject puts + inbetween each number in the arrray
-  print " "
+y = 0
+until x == j
+  y += 1
+  print "user #{y.to_i} "
+  print statPrint
+  puts ""
   x += 1
 end
